@@ -2,7 +2,8 @@ import { ThemeToggleBtn } from "@/components/common/ThemeToggleBtn";
 import { Button } from "@/components/ui/button";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/options";
-import LeftSidebar from "@/components/base/LeftSidebar";
+import BaseComponent from "@/components/base/BaseComponent";
+
 
 
 export default async function Home() {
@@ -10,7 +11,7 @@ export default async function Home() {
   return (
     <div className="container">
       {/* <ThemeToggleBtn/> */}
-      <LeftSidebar/>
+      <BaseComponent/>
     </div>
   );
 }
