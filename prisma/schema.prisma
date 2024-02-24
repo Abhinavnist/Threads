@@ -20,4 +20,14 @@ model User {
   email      String   @unique @db.VarChar(100)
   password   String?
   created_at DateTime @default(now())
+  post       post[]
+}
+
+model post {
+  id         Int      @id @default(autoincrement())
+  user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id    Int
+  content    String
+  image      String?
+  created_at DateTime @default(now())
 }

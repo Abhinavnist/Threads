@@ -1,6 +1,7 @@
 import "../globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
     title: "Home",
@@ -19,5 +20,6 @@ export const metadata: Metadata = {
             disableTransitionOnChange
           >
             {children}
+            <Toaster/>
           </ThemeProvider>)
   }

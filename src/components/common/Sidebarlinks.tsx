@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import { Bell, Home, Search, User2 } from 'lucide-react'
 import { Button } from '../ui/button'
 import { ThemeToggleBtn } from './ThemeToggleBtn'
+import SignOutBtn from './SignOUtBtn'
 
 export default function Sidebarlinks() {
     const pathName = usePathname()
@@ -22,10 +23,8 @@ export default function Sidebarlinks() {
             <li>
                <Link href="/" className={`flex items-center justify-start space-x-4 mt-6 hover:font-bold ${pathName == "/profile"? "font-bold" : ""}`}><User2 height={25} width={25}/><h3 className='text-lg lg:text-lg'>Profile</h3></Link> 
             </li>
-            <li className='flex  items-center absolute bottom-13'>
-               <Button size="sm" className='mr-10'>
-                  Sign Out
-               </Button>
+            <li className='flex  items-center absolute bottom-10'>
+               <SignOutBtn/>
                <ThemeToggleBtn/>
             </li>
         </ul>
